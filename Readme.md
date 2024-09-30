@@ -25,6 +25,4 @@ En caso de descargar las dependencias usadas en este repositorio:
 
 	python -m pip install Django
 
-### Iniciar tu proyecto de Djiango
 
-	python.exe <nombre_del_proyecto>.py
