@@ -31,4 +31,4 @@ Aquí tienes un ejemplo para MySQL:
 
     python manage.py runserver
 
-    [Django server](C:\Users\Usuario\Desktop\python_backend\Proyectos_Djiango\img\iniciando_servidor.png)
+![iniciando_servidor](https://github.com/user-attachments/assets/9031cd9c-c4a1-456e-a7df-c3b58820d629)
