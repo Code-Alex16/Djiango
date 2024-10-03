@@ -32,3 +32,42 @@ Aquí tienes un ejemplo para MySQL:
     python manage.py runserver
 
     [Django server](C:\Users\Usuario\Desktop\python_backend\Proyectos_Djiango\img\iniciando_servidor.png)
+
+
+## Creacion de una Aplicacion
+
+Hemos creado nuestro proyecto, sin embargo, esto no es suficiente, necesitamos crear nuestras aplicaciones
+que sera donde crearemos todo, en este caso, este proyecto sera dirigido para crear un Blog sencillo, con el siguiente comando crearemos nuestra aplicacion, con archivos por defecto de django....
+
+Recuerda siempre estar en el directorio de tu proyecto para poder ejecutar el archivo **manage**
+
+    python manage.py startapp <nombre_de_aplicacion>
+
+## Agregar nuestra App al proyecto
+
+Si bien creamos nuestra App, no significa que esta se ingresara de manera autonoma a la configuracion principal del proyecto, necesitamos ingresar nuestra app a la configuracion del sitio, accediendo al archivo **settings.py** del proyecto principal y en la seccion **INSTALLED_APPS = []** escribimos lo siguiente:
+
+    '<modulo>.apps.<nmbre_del_modulo>Config'
+
+El resultado seria algo como esto
+
+    //orginal
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+    ]
+
+    //Modificado
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'Blog.apps.BlogConfig'
+    ]
