@@ -31,6 +31,7 @@ Aquí tienes un ejemplo para MySQL:
 
     python manage.py runserver
 
+<<<<<<< HEAD
     [Django server](C:\Users\Usuario\Desktop\python_backend\Proyectos_Djiango\img\iniciando_servidor.png)
 
 
@@ -71,3 +72,6 @@ El resultado seria algo como esto
         'django.contrib.staticfiles',
         'Blog.apps.BlogConfig'
     ]
+=======
+![iniciando_servidor](https://github.com/user-attachments/assets/9031cd9c-c4a1-456e-a7df-c3b58820d629)
+>>>>>>> 34346afcdf6bfe7fddb807786c51dcf75a249eb0
