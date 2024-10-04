@@ -31,7 +31,6 @@ Aquí tienes un ejemplo para MySQL:
 
     python manage.py runserver
 
-<<<<<<< HEAD
     [Django server](C:\Users\Usuario\Desktop\python_backend\Proyectos_Djiango\img\iniciando_servidor.png)
 
 
@@ -72,6 +71,35 @@ El resultado seria algo como esto
         'django.contrib.staticfiles',
         'Blog.apps.BlogConfig'
     ]
-=======
-![iniciando_servidor](https://github.com/user-attachments/assets/9031cd9c-c4a1-456e-a7df-c3b58820d629)
->>>>>>> 34346afcdf6bfe7fddb807786c51dcf75a249eb0
+
+Ya que hemos agregado nuestra app a la configuracion principal del sitio, tenemos que migrar esta informacion, para crear la entidad a la Base de datos, aplicamos el siguiente comando, con el archivo manage principal
+    
+    python manage.py makemigrations <App>
+
+    python manage.py makemigrations Blog
+
+salida de la consola:
+
+    Migrations for 'Blog':
+    Blog\migrations\0001_initial.py
+        + Create model Post
+
+Si quieres visualizar la tabla creada puedes usar el siguiente comando
+
+    python manage.py sqlmigrate <app> <numero de la migracion>
+
+resultado:
+
+    BEGIN;
+    --
+    -- Create model Post
+    --
+    CREATE TABLE "Blog_post" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(250) NOT NULL, "slug" varchar(250) NOT NULL, "body" text NOT NULL, "publish" datetime NOT NULL, "created" datetime NOT NULL, "update" datetime NOT NULL, "status" varchar(2) NOT NULL, "author_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED);  
+    CREATE INDEX "Blog_post_slug_e910c9eb" ON "Blog_post" ("slug");
+    CREATE INDEX "Blog_post_author_id_89a23590" ON "Blog_post" ("author_id");
+    CREATE INDEX "Blog_post_publish_3fcdce_idx" ON "Blog_post" ("publish" DESC);
+    COMMIT;
+
+Para continuar, Migra nuevamente la pagina 
+
+    python manage.py migrate
